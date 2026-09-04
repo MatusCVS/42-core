@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmiklovi <mmiklovi@student.42prague.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/04 17:22:36 by mmiklovi          #+#    #+#             */
-/*   Updated: 2026/09/04 17:22:38 by mmiklovi         ###   ########.fr       */
+/*   Created: 2026/09/04 18:16:57 by mmiklovi          #+#    #+#             */
+/*   Updated: 2026/09/04 18:16:59 by mmiklovi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#ifndef LIBFT_H
-#define LIBFT_H
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t i;
+	unsigned char *ptr;
 
-#include <stddef.h>
+	i = 0;
+	ptr = (unsigned char *)s;
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-size_t	ft_strlen(const char *str);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void *ft_memcpy(void *dest, const void *src, size_t n);
-
-#endif
+	while (i < n)
+	{
+		ptr[i] = (unsigned char)c;
+		i++;
+	}
+return (s);
+}
